@@ -1,5 +1,5 @@
 ---
-- name: Distributing the Admin Node's SSH key to all nodes
+- name: SSH key - Generation
   hosts: admin
   sudo: true
   tasks:
