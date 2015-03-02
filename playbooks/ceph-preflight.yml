@@ -1,0 +1,4 @@
+---
+- name: Ceph Preflight Configuration
+- hosts: OSDs
+
