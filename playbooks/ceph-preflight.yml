@@ -3,6 +3,11 @@
   hosts: OSDs
   user: root
   sudo: true
+  remote_user: root
   tasks:
   - name: Creating ceph users
-    shell: 
+    shell: sudo useradd -d /home/ceph -m ceph
+  - name: Setting up password-less sudo
+    shell: sudo passwd ceph
+  - name: Setting up password-less sudo (cont'd)
+    shell: echo "{username} ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph && sudo chmod 0440 /etc/sudoers.d/ceph
