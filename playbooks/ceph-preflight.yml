@@ -8,5 +8,5 @@
   - name: Creating ceph users
     shell: sudo useradd -d /home/ceph -m ceph
     ignore_errors: yes
-  - name: Setting up password-less sudo (cont'd)
+  - name: Setting up password-less sudo
     shell: echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph && sudo chmod 0440 /etc/sudoers.d/ceph
