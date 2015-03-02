@@ -5,6 +5,8 @@
   sudo: true
   remote_user: root
   tasks:
+  - name Downloading Open SSH
+    apt: name=openssh state=installed
   - name: Creating ceph users
     shell: sudo useradd -d /home/ceph -m ceph
     ignore_errors: yes
