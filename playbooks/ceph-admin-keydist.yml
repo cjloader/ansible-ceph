@@ -1,0 +1,9 @@
+---
+- name: Distributing the Admin Node's SSH key to all nodes
+  hosts: admin
+  sudo: true
+  tasks:
+  - name: Generating SSH KEY
+    user: name=root generate_ssh_key=yes
+  - name: copying the SSH-KEY to the ansible machine
+    fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/ recursive=yes
