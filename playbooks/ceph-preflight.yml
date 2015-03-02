@@ -1,4 +1,8 @@
 ---
 - name: Ceph Preflight Configuration
-- hosts: OSDs
-
+  hosts: OSDs
+  user: root
+  sudo: true
+  tasks:
+  - name: Creating ceph users
+    shell: 
