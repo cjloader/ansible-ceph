@@ -7,6 +7,7 @@
   tasks:
   - name: Creating ceph users
     shell: sudo useradd -d /home/ceph -m ceph
+    ignore_errors: yes
   - name: Setting up password-less sudo
     shell: sudo passwd ceph
   - name: Setting up password-less sudo (cont'd)
