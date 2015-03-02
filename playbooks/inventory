@@ -5,7 +5,3 @@
 166.78.164.86
 166.78.164.87
 [cephfs]
-[all]
-admin
-OSDs
-cephfs
