@@ -10,4 +10,4 @@
   - name: Setting up password-less sudo
     shell: sudo passwd ceph
   - name: Setting up password-less sudo (cont'd)
-    shell: echo "{username} ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph && sudo chmod 0440 /etc/sudoers.d/ceph
+    shell: echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph && sudo chmod 0440 /etc/sudoers.d/ceph
