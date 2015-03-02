@@ -12,3 +12,14 @@
     ignore_errors: yes
   - name: Setting up password-less sudo (cont'd)
     shell: echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph && sudo chmod 0440 /etc/sudoers.d/ceph
+
+- name: Admin SSH key - Generation
+  hosts: admin
+  sudo: true
+  user: root
+  remote_user: root
+  tasks:
+  - name: Generating SSH KEY
+    user: name=root generate_ssh_key=yes
+  - name: copying the SSH-KEY to the ansible machine
+    fetch: src=~/.ssh/id_rsa.pub dest=~/.ssh/tmp/ recursive=yes
