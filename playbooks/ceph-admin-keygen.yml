@@ -2,6 +2,8 @@
 - name: SSH key - Generation
   hosts: admin
   sudo: true
+  user: root
+  remote_user: root
   tasks:
   - name: Generating SSH KEY
     user: name=root generate_ssh_key=yes
