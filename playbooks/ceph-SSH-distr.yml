@@ -13,4 +13,4 @@
   - name: Renaming inventory to hosts
     commamnd: rm hosts && mv inventory hosts
   - name: Editing /etc/hosts
-    command: sed -i '/[admin]/d' /etc/hosts && sed -i '/[OSDs]/d' /etc/hosts &&  command: sed -i '/[cephfs]/d' /etc/hosts &&  command: sed -i '[all],3d' /etc/hosts
+    command: sed -i '/[admin]/d' /etc/hosts && sed -i '/[OSDs]/d' /etc/hosts && sed -i '/[cephfs]/d' /etc/hosts && sed -i '[all],3d' /etc/hosts
