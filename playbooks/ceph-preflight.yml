@@ -13,6 +13,19 @@
   - name: Setting up password-less sudo (cont'd)
     shell: echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph && sudo chmod 0440 /etc/sudoers.d/ceph
 
+- name: Ceph Deploy setup on Admin node
+  hosts: admin
+  user: root
+  sudo: true
+  remote_user: root
+  tasks:
+  - name: Adding key 
+    shell: wget -q -O- 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc' | sudo apt-key add -
+  - name: Updating repositories
+    shell: echo deb http://ceph.com/debian-firefly/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list
+  - name: Installing ceph-deploy
+    apt: name=ceph-deploy state=installed update_cache=yes
+
 - name: Admin SSH key - Generation
   hosts: admin
   sudo: true
