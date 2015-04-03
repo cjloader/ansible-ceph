@@ -9,15 +9,15 @@
     shell: ceph-deploy install admin-mon node1 node2 node3
   - name: Add initial monitors
     shell: ceph-deploy mon create-initial
-  - name: Making directories on OSDs
-    host: OSDs
-    user: ceph-user
-    - tasks:
-    - name: Making a directory on OSDs
-      shell: mkdir /var/local/osd
-    - name: Preparing OSDs
-      shell: ceph-deploy osd prepare node:/var/local/osd
-    - name: Activating OSDs
-      shell: ceph-deploy activate node:/var/local/osd
+- name: Making directories on OSDs
+  host: OSDs
+  user: ceph-user
+  - tasks:
+   - name: Making a directory on OSDs
+     shell: mkdir /var/local/osd
+   - name: Preparing OSDs
+     shell: ceph-deploy osd prepare node:/var/local/osd
+   - name: Activating OSDs
+     shell: ceph-deploy activate node:/var/local/osd
   
   
