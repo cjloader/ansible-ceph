@@ -1,0 +1,13 @@
+---
+- name: Creating initial cluster
+  host: admin
+  user: root
+  tasks:
+  - name: Creating monitor
+    shell: ceph-deploy new admin-mon
+  - name: Install ceph on OSDs
+    shell: ceph-deploy install admin-mon node1 node2 node3
+  - name: Add initial monitors
+    shell: ceph-deploy mon create-initial
+  - name: Prepare the OSDs
+    shell: ceph-deploy osd prepare node1:
