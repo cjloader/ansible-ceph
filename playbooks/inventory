@@ -1,6 +1,12 @@
 [admin]
+admin-mon
+[admin:vars]
 166.78.164.62
 [OSDs]
+node1
+node2
+node3
+[OSDs:vars]
 166.78.164.50
 166.78.164.86
 166.78.164.87
