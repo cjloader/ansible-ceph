@@ -12,12 +12,12 @@
 - name: Making directories on OSDs
   host: OSDs
   user: ceph-user
-  - tasks:
-   - name: Making a directory on OSDs
-     shell: mkdir /var/local/osd
-   - name: Preparing OSDs
-     shell: ceph-deploy osd prepare node:/var/local/osd
-   - name: Activating OSDs
-     shell: ceph-deploy activate node:/var/local/osd
+  tasks:
+  - name: Making a directory on OSDs
+    shell: mkdir /var/local/osd
+  - name: Preparing OSDs
+    shell: ceph-deploy osd prepare node:/var/local/osd
+  - name: Activating OSDs
+    shell: ceph-deploy activate node:/var/local/osd
   
   
