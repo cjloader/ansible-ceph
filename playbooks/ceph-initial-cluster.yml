@@ -1,6 +1,6 @@
 ---
 - name: Creating initial cluster
-  host: admin
+  hosts: admin
   user: root
   tasks:
   - name: Creating monitor
@@ -10,7 +10,7 @@
   - name: Add initial monitors
     shell: ceph-deploy mon create-initial
 - name: Making directories on OSDs
-  host: OSDs
+  hosts: OSDs
   user: ceph-user
   tasks:
   - name: Making a directory on OSDs
