@@ -3,7 +3,7 @@
   hosts: OSDs
   user: cameron
   sudo: true
-  remote_user: cameron
+  remote_user: root
   tasks:
   - name: Downloading Open SSH
     apt: name=openssh-server state=installed
