@@ -1,7 +1,7 @@
 ---
 - name: Ceph Deploy setup on Admin node
   hosts: admin
-  user: root
+  user: cameron
   sudo: true
   remote_user: root
   tasks:
