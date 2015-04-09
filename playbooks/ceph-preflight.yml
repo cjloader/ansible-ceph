@@ -3,7 +3,7 @@
   hosts: OSDs
   user: cameron
   sudo: true
-  remote_user: root
+  remote_user: cameron
   tasks:
   - name: Downloading Open SSH
     apt: name=openssh-server state=installed
@@ -40,7 +40,7 @@
 - name: Copying admin SSH key to all nodes and updating /etc/hosts file on each machine
   hosts: all 
   user: cameron
-  remote_user: cameron
+  remote_user: root
   tasks:
   - name: Copying the SSH-key to the machines
     copy: src=~/.ssh/ dest=~/.ssh/ directory_mode
