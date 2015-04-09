@@ -15,7 +15,7 @@
 
 - name: Ceph Deploy setup on Admin node
   hosts: admin
-  user: root
+  user: cameron
   sudo: true
   remote_user: root
   tasks:
@@ -29,7 +29,7 @@
 - name: Admin SSH key - Generation
   hosts: admin
   sudo: true
-  user: root
+  user: cameron
   remote_user: root
   tasks:
   - name: Generating SSH KEY
@@ -39,8 +39,8 @@
 
 - name: Copying admin SSH key to all nodes and updating /etc/hosts file on each machine
   hosts: all 
-  user: root
-  remote_user: root
+  user: cameron
+  remote_user: cameron
   tasks:
   - name: Copying the SSH-key to the machines
     copy: src=~/.ssh/ dest=~/.ssh/ directory_mode
