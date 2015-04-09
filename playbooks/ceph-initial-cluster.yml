@@ -1,7 +1,7 @@
 ---
 - name: Creating initial cluster
   hosts: admin
-  user: root
+  user: cameron
   tasks:
   - name: Creating monitor
     shell: ceph-deploy new admin-mon
